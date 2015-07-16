@@ -11,16 +11,10 @@
 </select>
 <br>
 <br>
-<input type="text" name="option1" value="Option 1">
+  <% @amount_of_options.times do |i|%>
+<input type="text" name="<%= 'option'+ (i+ 1).to_s %>" value="<%= 'Option '+ (i+ 1).to_s %>">
 <br>
-<input type="text" name="option2" value="Option 2">
-<br> 
-<input type="text" name="option3" value="Option 3">
-<br>
-<input type="text" name="option4" value="Option 4">
-<br>
-<input type="text" name="option5" value="Option 5">
-<br>
+  <%end%>
 <input type="submit" value="Decide">
 <br>
 <br>
