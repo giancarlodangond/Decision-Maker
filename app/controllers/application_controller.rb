@@ -1,5 +1,8 @@
 require_relative "../../config/environment"
-require_relative "../models/decision_maker.rb"
+require_relative '../models/decision_maker.rb'
+require_relative '../models/idea.rb'
+require_relative '../models/category.rb'
+require_relative '../models/category_idea.rb'
 class ApplicationController < Sinatra::Base
   
   configure do
@@ -10,6 +13,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/' do  
+    @categories = Category.all 
     erb :index
   end
   

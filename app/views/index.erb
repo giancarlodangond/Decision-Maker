@@ -1,4 +1,15 @@
 <h2>Put Your Options Here</h2>
+<select>
+<!--   <option value="Restaurants">Restaurant</option>
+  <option value="Fast food">Fast food</option>
+  <option value="Board games">Board games</option>
+  <option value="Other">Other</option> -->
+  <% @categories.each do |category| %>
+  <option value="<%= category.name %>"><%= category.name %></option>
+  <%end%>
+</select>
+<br>
+<br>
 <form method="POST" action="/results">
 <input type="text" name="option1" value="Option 1">
 <br>
@@ -11,4 +22,11 @@
 <input type="text" name="option5" value="Option 5">
 <br>
 <input type="submit" value="Decide">
+<br>
+<br>
+<!-- <h3>Why don't you try:</h3> -->
+<h3>Add a suggestion for this category</h3>
+<input type="text" name="suggestion" value="New Suggestion">
+<br>
+<input type="submit" value="Submit">
 </form>
